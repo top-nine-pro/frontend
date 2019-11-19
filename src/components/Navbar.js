@@ -7,13 +7,18 @@ function Navbar() {
         <div className="Navbar">
           {/* <button onClick = {() => localStorage.clear()}>clear storage</button> */}
           <ul>
+          <p>
+              <Link to="/">Register</Link>
+            </p>
             <p>
-              <Link to="/">Login</Link>
+              <Link to="/login">Login</Link>
             </p>
             <p>
               <Link to="/homepage">Homepage</Link>
             </p>
-            
+            <p>
+              <Link to="/users">Users</Link>
+            </p>
             <p>
              <Link onClick = {() => localStorage.clear()} to="/">Log Out</Link>   
             </p>

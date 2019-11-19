@@ -17,9 +17,9 @@ const AllUsers = () => {
 
     return (
         <div>
-            {users.map(user => {
+            {users.map(user => (
                 <UserCard user={user} key={user.id} />
-            })}
+            ))}
         </div>
     )
 }
