@@ -2,54 +2,88 @@ import React, {useState, useEffect} from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import styled from "styled-components"
 
-const SignUpForm = ({ values, errors, touched, status}) => {
+const SignUpContainer = styled.div`
+diplay: flex;
+text-align: left;
+width: 25%;
+padding: 3rem;
+`
+const ButtonSignup = styled.button`
+background-color: black;
+color: white;
+width: 92%;
+`
+const ButtonAvatar = styled.button`
+background-color: black;
+color: white;
+width: 80%;
+`
+const AvatarSignUp = styled.div`
+display: flex;
+width: 95%;
+justify-content: space-between;
+`
 
-    const [users, setUsers] = useState([]);
+const AvatarSignUpRight = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+`
+const SignUpFormContainer = styled.div`
+width: 95%
+`
+const FieldButton = styled(Field)`
+width: 90%
+`
+const Astrik = styled.span`
+color: red;
+`
 
-    useEffect(() => {
-       status && setUsers(users => [...users, status]);
-     }, [status]);
+const SignUpForm = ({ values, errors, touched}) => {
 
     return(
-        <div>
-            <h4>Sign Up</h4>
+        <SignUpContainer>
+            <h1>Sign Up</h1>
             <p>Get started with your account now! We just need a few details.</p>
-            <p> * denotes a required field</p>
+            <p> <Astrik>*</Astrik> denotes a required field</p>
 
-            <div className="avatarSignUp">
+            <AvatarSignUp>
                 <div className="avatarSignUp-LeftSide">
-                <i class="far fa-user-circle"></i>
+                <i class="far fa-user-circle fa-9x"></i>
                 </div>
 
-                <div className="avatarSignUp-RightSide">
+                <AvatarSignUpRight>
                     <p> Upload a Profile Photo</p>
-                    <button>Select a Photo</button>
-                </div>
-            </div> 
+                    <ButtonAvatar>Select a Photo</ButtonAvatar>
+                </AvatarSignUpRight>
+            </AvatarSignUp> 
 
 
-            <div className="signup-form">
+            <SignUpFormContainer>
                 <Form>
-                    <p>Username *</p>
-                <Field type="text" name="username" />
-                    {touched.name && errors.name && (
-                    <p className="errors">{errors.name}</p>
+                    <p>Username <Astrik>*</Astrik></p>
+                <FieldButton type= "text" name="username"/>
+                    {touched.username && errors.username && (
+                    <p>{errors.username}</p>
                     )}
-                    <p>Email *</p>
-                 <Field type="email" name="email" />
+                    <p>Email <Astrik>*</Astrik></p>
+                 <FieldButton type="email" name="email" /> 
                     {touched.email && errors.email && (
-                    <p className="errors">{errors.email}</p>
+                    <p>{errors.email}</p>
                     )}
-                    <p>Password *</p>
-                <Field type="password" name="password" />
+                    <p>Password <Astrik>*</Astrik></p>
+                <FieldButton type="password" name="password" />
                     {touched.password && errors.password && (
-                    <p className="errors">{errors.password}</p>
+                    <p>{errors.password}</p>
                     )}
-                    <button>Create Account</button>
+                    <ButtonSignup>Create Account</ButtonSignup>
                 </Form>
-            </div>
-        </div>
+            </SignUpFormContainer>
+        </SignUpContainer>
     )
 }
 
@@ -61,6 +95,7 @@ const FormikUserForm = withFormik({
         password: password || "",
       };
     },
+
     validationSchema: Yup.object().shape({
       username: Yup.string().required(),
       email: Yup.string().required(),
@@ -80,4 +115,3 @@ const FormikUserForm = withFormik({
   })(SignUpForm);
   export default FormikUserForm;
 
-//export default SignUpForm
