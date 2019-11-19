@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -10,22 +10,23 @@ text-align: left;
 width: 25%;
 padding: 3rem;
 `
-const ButtonSignup = styled.button`
-background-color: black;
-color: white;
-width: 92%;
-`
 const ButtonAvatar = styled.button`
 background-color: black;
 color: white;
 width: 80%;
+`
+const ButtonSignup = styled.button`
+background-color: black;
+color: white;
+width: 92%;
+padding: 2%;
+margin-top: 7%;
 `
 const AvatarSignUp = styled.div`
 display: flex;
 width: 95%;
 justify-content: space-between;
 `
-
 const AvatarSignUpRight = styled.div`
 display: flex;
 flex-direction: column;
@@ -43,7 +44,7 @@ const Astrik = styled.span`
 color: red;
 `
 
-const SignUpForm = ({ values, errors, touched}) => {
+const SignUpForm = ({ errors, touched }) => {
 
     return(
         <SignUpContainer>
@@ -80,7 +81,8 @@ const SignUpForm = ({ values, errors, touched}) => {
                     {touched.password && errors.password && (
                     <p>{errors.password}</p>
                     )}
-                    <ButtonSignup>Create Account</ButtonSignup>
+                    <ButtonSignup type="submit">Create Account</ButtonSignup>
+
                 </Form>
             </SignUpFormContainer>
         </SignUpContainer>
@@ -109,6 +111,7 @@ const FormikUserForm = withFormik({
         .then(res => {
           setStatus(res.data);
           console.log(res);
+          
         })
         .catch(err => console.log(err.response));
     }

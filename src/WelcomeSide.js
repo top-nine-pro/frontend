@@ -25,40 +25,70 @@ const CategoriesContainer = styled.div`
     width: 20rem;
 `
 const Box1 = styled.div`
-background-color: red;
+background-color: #A70C13 ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Box2 = styled.div`
-background-color: orange;
+background-color: #EA7B2A ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Box3 = styled.div`
-background-color: khaki;
+background-color: #EAC42A ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 `
 const Box4 = styled.div`
 background-color: green;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Box5 = styled.div`
-background-color: dodgerblue;
+background-color: #2677D2 ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Box6 = styled.div`
-background-color: purple;
+background-color: #5F1EB6 ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 `
 const Box7 = styled.div`
-background-color: pink;
+background-color: #AB2DBF ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 `
 const Box8 = styled.div`
-background-color: lightblue;
+background-color: #2D9BBF ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 const Box9 = styled.div`
-background-color: lightgreen;
+background-color: #76A137 ;
 color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 
 const WelcomeSide = () => {
