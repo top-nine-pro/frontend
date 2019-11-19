@@ -6,6 +6,9 @@ import PrivateRoute from './components/PrivateRoute'
 import Navbar from './components/Navbar'
 import './App.css'
 
+
+
+
 function App() {
   return (
     <Router>
@@ -17,6 +20,9 @@ function App() {
           <HomePage />
         </PrivateRoute>
       </Switch>
+
+
+
     </div>
     </Router>
   )
