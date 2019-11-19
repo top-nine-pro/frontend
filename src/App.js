@@ -1,10 +1,13 @@
 import React from 'react'
 import Home from './components/Home'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute'
 import Navbar from './components/Navbar'
+import AllUsers from './components/AllUsers';
+import RegisterPage from './components/RegisterPage';
+import LoginPage from './components/LoginPage';
 import './App.css'
+
 
 
 
@@ -14,13 +17,15 @@ function App() {
     <Router>
     <div className="App">
 
-      <Navbar />      
-      <Route exact path="/" component={Login}/>
+      <Navbar />
+      <Route exact path="/" render={props => <RegisterPage {...props} />} />      
+      <Route path="/login" component={LoginPage} />
       <Switch>
         <PrivateRoute path="/homepage">
           <Home />
         </PrivateRoute>
       </Switch>
+      <Route path="/users" component={AllUsers} />
 
     </div>
     </Router>

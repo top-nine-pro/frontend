@@ -3,17 +3,22 @@ import {axiosWithAuth} from './axiosAuth';
 
 const TopNineForm = (props) => {
 
+    const id = localStorage.getItem("id")
+    
     const [newFavorite, setNewFavorite] = useState({
         name: '',
+        id: id
     });
 
     const changeHandler = e => {
         setNewFavorite(e.target.value);
     }
 
+    
+
     const submitHandler = e => {
         e.preventDefault();
-        axiosWithAuth().post('https://bw-topnine.herokuapp.com/api/categories', newFavorite)
+        axiosWithAuth().post(`https://bw-topnine.herokuapp.com/api/categories/${id}/user`, newFavorite)
         .then(res => {console.log(res)})
         .catch(err => {console.log(err)})
         // props.setFavorites([

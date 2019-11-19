@@ -107,10 +107,11 @@ const FormikUserForm = withFormik({
     handleSubmit(values, { setStatus }) {
       // values is our object with all our data on it
       axios
-        .post("https://reqres.in/api/users/", values)
+        .post("https://bw-topnine.herokuapp.com/api/auth/register", values)
         .then(res => {
           setStatus(res.data);
           console.log(res);
+          //props.history.push('/login');
           
         })
         .catch(err => console.log(err.response));
