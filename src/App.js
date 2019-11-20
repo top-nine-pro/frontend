@@ -13,7 +13,6 @@ import './App.css'
 
 
 
-
 function App() {
 
   // const [users, setUsers] = useState([]);
@@ -32,7 +31,7 @@ function App() {
     <div className="App">
 
       <Navbar />
-      <Route exact path="/" render={props => <RegisterPage {...props} />} />      
+      <Route exact path="/" component={RegisterPage} />      
       <Route path="/login" component={LoginPage} />
       <Switch>
         <PrivateRoute path="/homepage">

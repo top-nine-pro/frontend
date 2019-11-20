@@ -7,25 +7,34 @@ const TopNineForm = (props) => {
     
     const [newFavorite, setNewFavorite] = useState({
         name: '',
-        id: id
+        user_id: Number(id)
     });
 
     const changeHandler = e => {
-        setNewFavorite(e.target.value);
+        setNewFavorite({
+            ...newFavorite,
+            [e.target.name]: e.target.value}
+            );
     }
 
     
 
     const submitHandler = e => {
         e.preventDefault();
-        axiosWithAuth().post(`https://bw-topnine.herokuapp.com/api/categories/${id}/user`, newFavorite)
-        .then(res => {console.log(res)})
+        axiosWithAuth().post(`https://bw-topnine.herokuapp.com/api/categories/`, newFavorite)
+        .then(res => {
+            console.log(res)
+            props.setFavorites([
+                ...props.favorites,
+                newFavorite
+            ])
+            setNewFavorite({
+                name: '',
+                user_id: Number(id)
+            });
+        })
         .catch(err => {console.log(err)})
-        // props.setFavorites([
-        //     ...props.favorites,
-        //     newFavorite
-        // ])
-        setNewFavorite('');
+       
     }
 
     return (
@@ -34,8 +43,8 @@ const TopNineForm = (props) => {
             {props.favorites.length < 9 ? (<form onSubmit={submitHandler}>
                 <input 
                 type='text' 
-                name='favorite' 
-                id='favorite' 
+                name='name' 
+                id='name' 
                 placeholder='Add to your Top Nine'
                 value= {newFavorite.name}
                 onChange= {changeHandler}
