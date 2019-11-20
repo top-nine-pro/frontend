@@ -18,14 +18,12 @@ width: 70%;
 const LinksContainer = styled.div`
 display: flex;
 justify-content: space-between;
-width: 52%;
+width: 45%;
 align-items: center;
-
-
 `
 const LinkItem = styled.p`
-width: 13%;
-height: 70%;
+width: 17%;
+height: 65%;
 display: flex;
 align-items: center;
 justify-content: center;

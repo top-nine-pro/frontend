@@ -2,6 +2,7 @@ import React from 'react';
 import WelcomeSide from './WelcomeSide';
 import Login from './Login';
 import styled from "styled-components"
+import {Route} from "react-router-dom"
 
 const LoginPageContainer = styled.div`
 display: flex;
@@ -13,7 +14,7 @@ const LoginPage = () => {
     return (
         <LoginPageContainer>
             <WelcomeSide />
-            <Login />
+            <Route component= {Login} to ="/login" ></Route>
         </LoginPageContainer>
     )
 }
