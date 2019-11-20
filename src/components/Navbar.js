@@ -42,7 +42,6 @@ function Navbar() {
             <LogoImg src={topNinelogo} alt="Logo"/>
           </div>
 
-          {/* <button onClick = {() => localStorage.clear()}>clear storage</button> */}
           <LinksContainer>
             <LinkItem>
               <Linktext to="/">register</Linktext>
@@ -57,7 +56,7 @@ function Navbar() {
               <Linktext to="/users">users</Linktext>
             </LinkItem>
             <LinkItem>
-             <Linktext onClick = {() => localStorage.clear()} to="/">log out</Linktext>   
+             <Linktext onClick = {() => localStorage.clear()} to="/login">log out</Linktext>   
             </LinkItem>
           </LinksContainer>
 
