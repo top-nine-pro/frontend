@@ -6,6 +6,7 @@ diplay: flex;
 text-align: left;
 width: 25%;
 padding: 3rem;
+border-right: 1px solid lightgray;
 `
 const WelcomeParagraphs = styled.div`
 width: 100%;
@@ -94,24 +95,24 @@ justify-content: center;
 const WelcomeSide = () => {
     return(
         <WelcomeContainer>
-            <h2> Welcome to MyTopNine</h2>
+            <h1> Welcome to MyTopNine</h1>
             <WelcomeParagraphs>
-            <p>Choose your top nine in a variety of categories, including sports, video games, makeup, movies, and more!</p>
-            <p>Share your top nine lists with everyone and find out who your friends really are!</p>
+            <p>Choose your top nine favorite things, including sports, video games, makeup, movies, and more!</p>
+            <p>Share your top nine list with everyone and find out who your friends really are!</p>
             </WelcomeParagraphs>
 
-            <h2>Top Nine Categories</h2>
+            <h2> My Top Nine</h2>
             <Bottom>
             <CategoriesContainer>
-                <Box1>Celebrities</Box1>
-                <Box2>Movies</Box2>
-                <Box3>Places to Travel</Box3>
-                <Box4>Beverages</Box4>
-                <Box5>Songs</Box5>
-                <Box6>Musical Artists</Box6>
-                <Box7>Super Heroes</Box7>
-                <Box8>TV Shows</Box8>
-                <Box9>Quotes</Box9>
+                <Box1>Blueberries</Box1>
+                <Box2>Mulan</Box2>
+                <Box3>Game of Thrones</Box3>
+                <Box4>Chai Lattes</Box4>
+                <Box5>The Beatles</Box5>
+                <Box6>Venice, Italy</Box6>
+                <Box7>Captain America</Box7>
+                <Box8>Lilies</Box8>
+                <Box9>Puppies</Box9>
             </CategoriesContainer>
             </Bottom>
         </WelcomeContainer>

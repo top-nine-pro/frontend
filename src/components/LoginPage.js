@@ -1,13 +1,20 @@
 import React from 'react';
 import WelcomeSide from './WelcomeSide';
 import Login from './Login';
+import styled from "styled-components"
+
+const LoginPageContainer = styled.div`
+display: flex;
+justify-content: center;
+`
+
 
 const LoginPage = () => {
     return (
-        <div>
+        <LoginPageContainer>
             <WelcomeSide />
             <Login />
-        </div>
+        </LoginPageContainer>
     )
 }
 
