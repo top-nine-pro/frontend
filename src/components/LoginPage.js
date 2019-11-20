@@ -2,11 +2,11 @@ import React from 'react';
 import WelcomeSide from './WelcomeSide';
 import Login from './Login';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
     return (
         <div>
             <WelcomeSide />
-            <Login />
+            <Login {...props}/>
         </div>
     )
 }
