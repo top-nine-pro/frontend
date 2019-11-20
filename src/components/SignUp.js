@@ -44,7 +44,7 @@ const Astrik = styled.span`
 color: red;
 `
 
-const SignUpForm = ({ errors, touched }) => {
+const SignUpForm = ({ errors, touched, history }) => {
 
     return(
         <SignUpContainer>
@@ -102,17 +102,16 @@ const FormikUserForm = withFormik({
       username: Yup.string().required(),
       email: Yup.string().required(),
       password: Yup.string().min(6, "Password must be 6 characters or longer").required(),
-      
     }),
-    handleSubmit(values, { setStatus }) {
+
+    handleSubmit(values, { setStatus, history }) {
       // values is our object with all our data on it
       axios
         .post("https://bw-topnine.herokuapp.com/api/auth/register", values)
         .then(res => {
           setStatus(res.data);
           console.log(res);
-          //props.history.push('/login');
-          
+          history.push('/login');
         })
         .catch(err => console.log(err.response));
     }

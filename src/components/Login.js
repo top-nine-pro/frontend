@@ -1,6 +1,26 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
 
+const SignInContainer = styled.div`
+diplay: flex;
+text-align: left;
+width: 25%;
+padding: 3rem;
+`
+
+const ButtonSignIn = styled.button`
+background-color: black;
+color: white;
+width: 92%;
+padding: 2%;
+margin-top: 7%;
+`
+const InputArea = styled.input`
+width: 90%;
+margin: 4% 0%;
+
+`
 
 class Login extends React.Component {
   state = {
@@ -48,26 +68,32 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>{this.state.isLoggedIn ? "LOGGED IN!" : "Please login"}</h2>
+      <SignInContainer>
+        <h2>{this.state.isLoggedIn ? "LOGGED IN!" : "Please log in"}</h2>
+        <p> Log in to your account to see the latest updates from your TopNine!</p>
         <form onSubmit={this.login}>
-          <input
+
+          <div>
+            <label>Username</label>
+          </div>
+          <InputArea
             type="text"
             name="username"
-            placeholder= "username"
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
-          <input
+          <div>
+            <label>Password</label>
+          </div>
+          <InputArea
             type="password"
             name="password"
-            placeholder= "password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          <ButtonSignIn>Log in</ButtonSignIn>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

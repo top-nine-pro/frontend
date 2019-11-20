@@ -1,13 +1,19 @@
 import React from 'react';
 import WelcomeSide from './WelcomeSide';
 import SignUp from './SignUp';
+import styled from "styled-components"
 
-const RegisterPage = () => {
+const RegisterContainer = styled.div`
+display: flex;
+justify-content: center;
+`
+
+const RegisterPage = ({history}) => {
     return (
-        <div>
+        <RegisterContainer>
             <WelcomeSide />
-            <SignUp />
-        </div>
+            <SignUp history={history}/>
+        </RegisterContainer>
     )
 }
 

@@ -1,14 +1,23 @@
 import React from 'react';
 import WelcomeSide from './WelcomeSide';
 import Login from './Login';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import styled from "styled-components"
+import {Route} from "react-router-dom"
+
+const LoginPageContainer = styled.div`
+display: flex;
+justify-content: center;
+`
+
+
 
 const LoginPage = (props) => {
     return (
-        <div>
+        <LoginPageContainer>
             <WelcomeSide />
+
             <Login {...props}/>
-        </div>
+        </LoginPageContainer>
     )
 }
 
