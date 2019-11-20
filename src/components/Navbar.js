@@ -62,7 +62,6 @@ function Navbar() {
           </LinksContainer>
 
         </NavContainer>
-
     );
   }
   
