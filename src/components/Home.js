@@ -14,7 +14,7 @@ const Home = () => {
         .get(`https://bw-topnine.herokuapp.com/api/categories/${id}/user`)
         .then(response => {setFavorites(response.data)})
         .catch(err => {console.log(err)})
-    },[favorites])
+    },[])
 
     return (
         <div>

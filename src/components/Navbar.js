@@ -20,7 +20,7 @@ function Navbar() {
               <Link to="/users">Users</Link>
             </p>
             <p>
-             <Link onClick = {() => localStorage.clear()} to="/">Log Out</Link>   
+             <Link onClick = {() => localStorage.clear()} to="/login">Log Out</Link>   
             </p>
           </ul>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserCard = (props) => {
+    
     return (
         <div>
             <img src='https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png' />
