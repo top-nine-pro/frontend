@@ -13,7 +13,6 @@ function HomePage(props) {
         .then(response => {setUser(response.data)})
         .catch(err => {console.log(err)})
     },[])
-    
 
     return (
         
@@ -29,9 +28,8 @@ function HomePage(props) {
             </div>
             <h3>Top Nine</h3>
             {props.favorites.map(favorite => (
-             <FavoriteCard favorite={favorite} key={favorite.id}/>
+             <FavoriteCard favorites={props.favorites} setFavorites={props.setFavorites} favorite={favorite} key={favorite.id}/>
            ))}
-
         </div>
     )
 

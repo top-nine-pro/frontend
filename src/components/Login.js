@@ -40,7 +40,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     if (localStorage.getItem("token")) {
-      this.setState({ ...this.setState, isLoggedIn: true});
+      this.setState({ ...this.state, isLoggedIn: true});
     } else {
       this.setState({ ...this.state, isLoggedIn: false });
     }
