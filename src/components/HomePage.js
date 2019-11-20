@@ -12,7 +12,9 @@ function HomePage(props) {
         axiosWithAuth().get(`https://bw-topnine.herokuapp.com/api/users/${id}`)
         .then(response => {setUser(response.data)})
         .catch(err => {console.log(err)})
+
     },[])
+
 
     return (
         
