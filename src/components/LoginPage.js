@@ -10,11 +10,13 @@ justify-content: center;
 `
 
 
-const LoginPage = () => {
+
+const LoginPage = (props) => {
     return (
         <LoginPageContainer>
             <WelcomeSide />
-            <Route component= {Login} to ="/login" ></Route>
+
+            <Login {...props}/>
         </LoginPageContainer>
     )
 }
