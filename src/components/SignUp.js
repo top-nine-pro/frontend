@@ -44,7 +44,7 @@ const Astrik = styled.span`
 color: red;
 `
 
-const SignUpForm = ({ errors, touched}) => {
+const SignUpForm = ({ errors, touched}, props) => {
 
     return(
         <SignUpContainer>
