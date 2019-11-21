@@ -68,7 +68,7 @@ class Login extends React.Component {
   render() {
     return (
       <SignInContainer>
-        <h2>{this.state.isLoggedIn ? "LOGGED IN!" : "Please log in"}</h2>
+        <h2>{this.state.isLoggedIn ? "Logged In!" : "Please log in"}</h2>
         <p> Log in to your account to see the latest updates from your TopNine!</p>
         <form onSubmit={this.login}>
 
@@ -90,7 +90,7 @@ class Login extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <ButtonSignIn type='submit'>Log in</ButtonSignIn>
+          <ButtonSignIn type="submit">Log in</ButtonSignIn>
         </form>
       </SignInContainer>
     );

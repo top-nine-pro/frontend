@@ -28,36 +28,38 @@ display: flex;
 align-items: center;
 justify-content: center;
 border: 2px solid lightgray;
+
 `
 
 const Linktext = styled(Link)`
 text-decoration: none;
 color: gray;
+
 `
+
 function Navbar() {
 
     return (
         <NavContainer>
-          <div>
+          <Link to="/homepage">
             <LogoImg src={topNinelogo} alt="Logo"/>
-          </div>
+          </Link>
 
-          {/* <button onClick = {() => localStorage.clear()}>clear storage</button> */}
           <LinksContainer>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/">register</Linktext>
             </LinkItem>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/login">login</Linktext>
             </LinkItem>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/homepage">home</Linktext>
             </LinkItem>
             <LinkItem>
               <Linktext to="/users">users</Linktext>
             </LinkItem>
             <LinkItem>
-             <Linktext onClick = {() => localStorage.clear()} to="/">log out</Linktext>   
+             <Linktext onClick = {() => localStorage.clear()} to="/login">log out</Linktext>   
             </LinkItem>
           </LinksContainer>
 

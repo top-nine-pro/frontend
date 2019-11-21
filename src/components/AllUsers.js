@@ -2,6 +2,34 @@ import React, {useState, useEffect} from 'react';
 import { axiosWithAuth } from './axiosAuth';
 import { Link } from "react-router-dom";
 import UserCard from './UserCard';
+import styled from "styled-components"
+
+const Container = styled.div`
+display: flex;
+flex-wrap: wrap;
+`
+const UserContainer = styled.div`
+Margin: 1%;
+text-decoration: none;
+
+`
+
+const SearchBar = styled.input`
+width: 30%;
+height: 35px;
+border-radius: 10px;
+font-size: 20px;
+`
+
+const Search= styled.div`
+width: 100%;
+
+`
+const Linktext = styled(Link)`
+text-decoration: none;
+color: black
+`
+
 
 const AllUsers = () => {
 
@@ -11,8 +39,6 @@ const AllUsers = () => {
     useEffect(() => { const getUsers = () => {
         axiosWithAuth().get('https://bw-topnine.herokuapp.com/api/users/')
         .then(res => {
-            console.log(res);
-            // setUsers(res.data);
             const data = res.data.filter(user =>
                 user.username.toLowerCase().includes(query.toLowerCase())
               );
@@ -26,13 +52,13 @@ const AllUsers = () => {
         setQuery(event.target.value);
       };
 
-      console.log(users)
-
 
     return (
-        <div>
+        <Container>
+            <Search>
             <form className="search">
-            <input
+            <h4>Search for a TopNiner by name!</h4>
+            <SearchBar
             type="text"
             onChange={handleInputChange}
             value={query}
@@ -43,12 +69,15 @@ const AllUsers = () => {
             autoComplete="off"
             />
             </form>
+            </Search>
             {users.map(user => (
-                <Link to={`/users/${user.id}`}>
-                    <UserCard user={user} key={user.id} />                
-                </Link>
+                <UserContainer>
+                <Linktext to={`/users/${user.id}`}>
+                <UserCard user={user} key={user.id} />              
+                </Linktext>
+                </UserContainer>
             ))}
-        </div>
+        </Container>
     )
 }
 
