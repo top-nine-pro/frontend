@@ -8,11 +8,11 @@ display: flex;
 justify-content: center;
 `
 
-const RegisterPage = ({history}) => {
+const RegisterPage = (props) => {
     return (
         <RegisterContainer>
             <WelcomeSide />
-            <SignUp history={history}/>
+            <SignUp {...props}/>
         </RegisterContainer>
     )
 }
