@@ -1,7 +1,43 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {axiosWithAuth} from "./axiosAuth";
+import styled from 'styled-components';
 
+
+const FormDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 15px;
+`
+
+const Input = styled.input`
+    width: 5.8rem;
+    height: 5.8rem;
+    text-align: center;
+    border: 2px solid black;
+    &:focus {
+        background: #F0F0F0;
+        outline: none;
+    }
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    }
+`
+
+const Button = styled.button`
+    border: 2px solid black;
+    background: black;
+    color: white;
+    font-weight: bold;
+    width: 5.9rem;
+    height: 2rem;
+    margin-top: 5px;
+    &:hover {
+        background: white;
+        color: black;
+        cursor: pointer;
+    }
+`
 
 const EditTopNine = (props) => {
 
@@ -59,10 +95,10 @@ const EditTopNine = (props) => {
     
 
     return (
-        <div>
-        <h1>Edit</h1>
+        <FormDiv>
+        <h4>Edit</h4>
         <form onSubmit={edit}>
-            <input
+            <Input
             type="text"
             name="name"
             id="name"
@@ -70,10 +106,11 @@ const EditTopNine = (props) => {
             value={favoriteData.name}
             onChange={handleChange}
             />
-            <button type="submit">Submit</button>
-
+            <div>
+            <Button type="submit">Submit</Button>
+            </div>
         </form>
-        </div>
+        </FormDiv>
     );
 };
 
