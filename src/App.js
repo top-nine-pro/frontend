@@ -15,17 +15,6 @@ import './App.css'
 
 function App() {
 
-  // const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //     axiosWithAuth().get('https://bw-topnine.herokuapp.com/api/users/')
-  //     .then(res => {
-  //         console.log(res);
-  //         setUsers(res.data);
-  //     })
-  //     .catch(err => {console.log(err)});
-  // }, [])
-
   return (
     <Router>
     <div className="App">
@@ -40,7 +29,6 @@ function App() {
       </Switch>
       <Route path ="/users/:id" component={SpecificUser} />
       <Route exact path="/users" component={AllUsers}/>
-       {/* render={(props) => <AllUsers {...props} users={users} />} /> */}
 
     </div>
     </Router>

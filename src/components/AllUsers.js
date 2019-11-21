@@ -4,14 +4,21 @@ import { Link } from "react-router-dom";
 import UserCard from './UserCard';
 import styled from "styled-components"
 
+
 const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
+align-items: center;
+justify-content: center;
 `
 const UserContainer = styled.div`
-Margin: 1%;
+margin: 0.5%;
+padding: 1%;
 text-decoration: none;
 
+&:hover{
+box-shadow: 1px 1px 5px black;
+}
 `
 
 const SearchBar = styled.input`
@@ -19,6 +26,7 @@ width: 30%;
 height: 35px;
 border-radius: 10px;
 font-size: 20px;
+margin-bottom: 1%;
 `
 
 const Search= styled.div`
