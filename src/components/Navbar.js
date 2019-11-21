@@ -28,28 +28,31 @@ display: flex;
 align-items: center;
 justify-content: center;
 border: 2px solid lightgray;
+
 `
 
 const Linktext = styled(Link)`
 text-decoration: none;
 color: gray;
+
 `
+
 function Navbar() {
 
     return (
         <NavContainer>
-          <div>
+          <Link to="/homepage">
             <LogoImg src={topNinelogo} alt="Logo"/>
-          </div>
+          </Link>
 
           <LinksContainer>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/">register</Linktext>
             </LinkItem>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/login">login</Linktext>
             </LinkItem>
-            <LinkItem>
+            <LinkItem className="MenuBox">
               <Linktext to="/homepage">home</Linktext>
             </LinkItem>
             <LinkItem>
