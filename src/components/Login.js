@@ -19,7 +19,6 @@ margin-top: 7%;
 const InputArea = styled.input`
 width: 90%;
 margin: 4% 0%;
-
 `
 
 class Login extends React.Component {

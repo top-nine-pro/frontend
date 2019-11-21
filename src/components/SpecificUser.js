@@ -38,6 +38,7 @@
 //     };
 //   }
 
+
 //   componentDidMount() {
 //     this.fetchUser(this.props.match.params.id);
 //   }
@@ -47,6 +48,7 @@
 //       this.fetchUser(newProps.match.params.id);
 //     }
 //   }
+
 
 // //   fetchUser = id => {
 // //     axios
