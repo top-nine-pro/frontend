@@ -1,5 +1,43 @@
 import React, {useState} from 'react';
 import {axiosWithAuth} from './axiosAuth';
+import styled from 'styled-components';
+
+
+const FormDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 15px;
+`
+
+const Input = styled.input`
+    width: 5.8rem;
+    height: 5.8rem;
+    text-align: center;
+    border: 2px solid black;
+    &:focus {
+        background: #FCFFE9;
+        outline: none;
+    }
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    }
+`
+
+const Button = styled.button`
+    border: 2px solid black;
+    background: black;
+    color: white;
+    font-weight: bold;
+    width: 5.9rem;
+    height: 2rem;
+    margin-top: 5px;
+    &:hover {
+        background: white;
+        color: black;
+        cursor: pointer;
+    }
+`
 
 const TopNineForm = (props) => {
 
@@ -38,21 +76,23 @@ const TopNineForm = (props) => {
     }
 
     return (
-        <div>
+        <FormDiv>
             {/* add conditional statement to remove Form if friends.length is 9 */}
             {props.favorites.length < 9 ? (<form onSubmit={submitHandler}>
-                <input 
+                <Input 
                 type='text' 
                 name='name' 
                 id='name' 
-                placeholder='Add to your Top Nine'
+                placeholder='Add to Top 9'
                 value= {newFavorite.name}
                 onChange= {changeHandler}
                 required
                 />
-                <button type='submit'>Add</button>
+                <div>
+                <Button type='submit'>Add</Button>
+                </div>
             </form>) : <div></div>}
-        </div>
+        </FormDiv>
     )
 }
 

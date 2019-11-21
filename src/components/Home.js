@@ -24,14 +24,13 @@ const Home = () => {
         <div>
             <Router>
             <HomePage  favorites={favorites} setFavorites={setFavorites} />
-            <TopNineForm favorites={favorites} setFavorites={setFavorites} />
-            
             <Route 
                 path='/edit/:id' 
                 render={props => {
                     return <EditTopNine {...props} favorites={favorites} setFavorites={setFavorites} />; 
                 }}
             />
+            <TopNineForm favorites={favorites} setFavorites={setFavorites} />
             </Router>
         </div>
     )
