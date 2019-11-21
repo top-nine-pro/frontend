@@ -90,7 +90,7 @@ class Login extends React.Component {
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />
-          <ButtonSignIn>Log in</ButtonSignIn>
+          <ButtonSignIn type='submit'>Log in</ButtonSignIn>
         </form>
       </SignInContainer>
     );

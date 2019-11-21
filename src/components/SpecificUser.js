@@ -38,22 +38,24 @@
 //     };
 //   }
 
-  // componentDidMount() {
-  //   this.fetchUser(this.props.match.params.id);
-  // }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.match.params.id !== newProps.match.params.id) {
-  //     this.fetchUser(newProps.match.params.id);
-  //   }
-  // }
+//   componentDidMount() {
+//     this.fetchUser(this.props.match.params.id);
+//   }
 
-//   fetchUser = id => {
-//     axios
-//       .get(`http://localhost:5000/api/users/${id}`)
-//       .then(res => this.setState({ user: res.data }))
-//       .catch(err => console.log(err.response));
-//   };
+//   componentWillReceiveProps(newProps) {
+//     if (this.props.match.params.id !== newProps.match.params.id) {
+//       this.fetchUser(newProps.match.params.id);
+//     }
+//   }
+
+
+// //   fetchUser = id => {
+// //     axios
+// //       .get(`http://localhost:5000/api/users/${id}`)
+// //       .then(res => this.setState({ user: res.data }))
+// //       .catch(err => console.log(err.response));
+// //   };
 
 
 //   render() {
